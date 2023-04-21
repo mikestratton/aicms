@@ -11,7 +11,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     {{ __("You're logged in!") }}
 
-                    <h1 class="text-lg">Programming Languages</h1>
+                    <h1 class="text-lg">Programming Languages, Frameworks and Tech Stacks</h1><br>
+                    <a href="/code/create">Add Programming Language</a>
 
                     <code-manager></code-manager>
 

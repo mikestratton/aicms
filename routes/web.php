@@ -33,7 +33,6 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('code', ProgrammingLanguageController::class);
 Route::resource('category', CategoryController::class);
-
 Route::resource('post', PostController::class);
 //Route::get('/post', [PostController::class, 'index'])->name('post.index');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');

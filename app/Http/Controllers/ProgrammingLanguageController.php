@@ -25,7 +25,7 @@ class ProgrammingLanguageController extends Controller
      */
     public function create()
     {
-        return view("code.create");
+        return view("admin.code.create");
     }
 
     /**
