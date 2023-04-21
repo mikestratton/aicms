@@ -25,7 +25,7 @@ class ProgrammingLanguageController extends Controller
      */
     public function create()
     {
-        //
+        return view("code.create");
     }
 
     /**
@@ -33,7 +33,11 @@ class ProgrammingLanguageController extends Controller
      */
     public function store(StoreProgrammingLanguageRequest $request)
     {
-        //
+        $code = new ProgrammingLanguage;
+        $code->name = $request->name;
+
+        $code->save();
+        return redirect('/code');
     }
 
     /**
