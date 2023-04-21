@@ -13,7 +13,11 @@ class ProgrammingLanguageController extends Controller
      */
     public function index()
     {
-        //
+        $codes = ProgrammingLanguage::all();
+
+        return view('admin.code.index', [
+            'codes' => $codes
+        ]);
     }
 
     /**

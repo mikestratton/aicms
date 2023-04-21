@@ -13,7 +13,11 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::all();
+
+        return view('post.index', [
+            'posts' => $posts
+        ]);
     }
 
     /**
@@ -21,7 +25,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('post.create');
     }
 
     /**
@@ -29,7 +33,13 @@ class PostController extends Controller
      */
     public function store(StorePostRequest $request)
     {
-        //
+
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->body;
+
+        $post->save();
+        return redirect('/post');
     }
 
     /**
