@@ -11,6 +11,16 @@ class PostController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function welcome()
+    {
+        $posts = Post::all();
+
+        return view('post.welcome', [
+            'posts' => $posts
+        ]);
+    }
+
     public function index()
     {
         $posts = Post::all();

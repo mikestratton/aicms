@@ -17,9 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('post.welcome');
-});
+//Route::get('/', function () {
+//    return view('post.welcome');
+//});
+
+Route::get('/', [PostController::class, 'welcome']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,9 +33,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('code', ProgrammingLanguageController::class);
-Route::resource('category', CategoryController::class);
-Route::resource('post', PostController::class);
+Route::resource('code', ProgrammingLanguageController::class)->middleware('auth');
+Route::resource('category', CategoryController::class)->middleware('auth');
+Route::resource('post', PostController::class)->middleware('auth');
 //Route::get('/post', [PostController::class, 'index'])->name('post.index');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 //Route::put('/post/create', [PostController::class, 'store'])->name('post.store');
