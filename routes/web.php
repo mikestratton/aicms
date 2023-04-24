@@ -42,6 +42,8 @@ Route::resource('ai', AIController::class)->middleware('auth');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 //Route::put('/post/create', [PostController::class, 'store'])->name('post.store');
 
+Route::get('/test-api', [AIController::class, 'TestAPI']);
+
 
 
 require __DIR__.'/auth.php';
