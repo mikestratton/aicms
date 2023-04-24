@@ -33,7 +33,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('code', ProgrammingLanguageController::class)->middleware('auth');
+Route::resource('subject', SubjectController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('post', PostController::class)->middleware('auth');
 //Route::get('/post', [PostController::class, 'index'])->name('post.index');

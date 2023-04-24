@@ -6,7 +6,7 @@ use App\Models\ProgrammingLanguage;
 use App\Models\User;
 use Illuminate\Auth\Access\Response;
 
-class ProgrammingLanguagePolicy
+class SubjectPolicy
 {
     /**
      * Determine whether the user can view any models.

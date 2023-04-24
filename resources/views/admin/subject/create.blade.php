@@ -12,10 +12,10 @@
                     {{ __("You're logged in!") }}
 
 
-                    <form method="post" action="{{ route('code.store') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('subject.store') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
-                            <label class="py-4" for="name">Programming Language</label>
+                            <label class="py-4" for="name">Subject</label>
                             <input class="mt-4" type="text" class="form-control" id="name" name="name"/>
                         </div>
 
