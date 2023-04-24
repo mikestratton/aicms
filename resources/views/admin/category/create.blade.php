@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Add a Post') }}
+            {{ __('Add a Category') }}
         </h2>
     </x-slot>
 
@@ -12,16 +12,13 @@
 
 
 
-                    <form method="post" action="{{ route('post.store') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('category.store') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
-                            <label class="py-4" for="title">Title</label>
-                            <input class="mt-4" type="text" class="form-control" id="title" name="title"/>
+                            <label class="py-4" for="name">Category</label>
+                            <input class="mt-4" type="text" class="form-control" id="name" name="name"/>
                         </div>
-                        <div class="form-group">
-                            <label for="body">Content</label>
-                            <input type="text" class="form-control" id="body" name="body"/>
-                        </div>
+
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
 

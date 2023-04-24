@@ -16,8 +16,10 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
 
-                    <x-nav-link :href="url('code')">Code</x-nav-link>
-                    <x-nav-link :href="url('post')">Post</x-nav-link>
+                    <x-nav-link :href="url('subject')">Subjects</x-nav-link>
+                    <x-nav-link :href="url('category')">Categories</x-nav-link>
+                    <x-nav-link :href="url('post')">Posts</x-nav-link>
+                    <x-nav-link :href="url('ai')">AI</x-nav-link>
                 </div>
             </div>
 

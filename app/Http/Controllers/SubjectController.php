@@ -13,10 +13,10 @@ class SubjectController extends Controller
      */
     public function index()
     {
-        $codes = subject::all();
+        $subjects = subject::all();
 
         return view('admin.subject.index', [
-            'codes' => $codes
+            'subjects' => $subjects
         ]);
     }
 
@@ -33,10 +33,10 @@ class SubjectController extends Controller
      */
     public function store(StoreSubjectRequest $request)
     {
-        $code = new Subject;
-        $code->name = $request->name;
+        $subject = new Subject;
+        $subject->name = $request->name;
 
-        $code->save();
+        $subject->save();
         return redirect('/subject');
     }
 

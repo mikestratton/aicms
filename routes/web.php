@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\AIController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProgrammingLanguageController;
+use App\Http\Controllers\SubjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
 Route::resource('subject', SubjectController::class)->middleware('auth');
 Route::resource('category', CategoryController::class)->middleware('auth');
 Route::resource('post', PostController::class)->middleware('auth');
+Route::resource('ai', AIController::class)->middleware('auth');
 //Route::get('/post', [PostController::class, 'index'])->name('post.index');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 //Route::put('/post/create', [PostController::class, 'store'])->name('post.store');

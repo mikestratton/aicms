@@ -13,7 +13,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //
+        $categories = Category::all();
+
+        return view('admin.category.index', [
+           'categories' => $categories
+        ]);
     }
 
     /**
@@ -21,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.category.create');
     }
 
     /**
@@ -29,7 +33,11 @@ class CategoryController extends Controller
      */
     public function store(StoreCategoryRequest $request)
     {
-        //
+        $category = new Category;
+        $category->name = $request->name;
+
+        $category->save();
+        return redirect('/category');
     }
 
     /**
