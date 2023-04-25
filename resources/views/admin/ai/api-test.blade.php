@@ -17,18 +17,18 @@
 
 
                     <code-manager></code-manager>
+                    {{ $result }}
+{{--                    @foreach($response as $value)--}}
+{{--                        <div>--}}
+{{--                            <br>--}}
+{{--                            <article>--}}
+{{--                                <h1>{{ $value}}</h1>--}}
 
-{{--                    @foreach($categories as $category)
-                        <div>
-                            <br>
-                            <article>
-                                <h1>{{ $category->name }}</h1>
-
-                            </article>
-                            <br>
-                            <hr>
-                        </div>
-                    @endforeach--}}
+{{--                            </article>--}}
+{{--                            <br>--}}
+{{--                            <hr>--}}
+{{--                        </div>--}}
+{{--                    @endforeach--}}
                 </div>
 </div>
 </div>

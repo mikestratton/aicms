@@ -111,10 +111,6 @@ class AIController extends Controller
             CURLOPT_FOLLOWLOCATION => true,
             CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
             CURLOPT_CUSTOMREQUEST => 'POST',
-            /*CURLOPT_HTTPHEADER, array(
-                "Content-Type: application/json",
-                "Authorization: Bearer $key",
-            ),*/
             CURLOPT_HTTPHEADER => array(
                 "Content-Type: application/json",
                 "Authorization: Bearer $key",
@@ -137,6 +133,26 @@ class AIController extends Controller
         $response = curl_exec($curl);
 
         curl_close($curl);
-        echo $response;
+
+        $json = json_decode($response, false);
+        $choices = json_encode($json->choices);
+        $json2 = json_decode($choices, false);
+
+        $result = $json2[0]->message->content;
+
+        return view('admin.ai.api-test', [
+            'result' => $result
+        ]);
+    }
+
+    public function TestAPIHardCodedResponse()
+    {
+        $file = file_get_contents('test/test.json');
+
+        $json = json_decode($file, false);
+        $choices = json_encode($json->choices);
+        $json2 = json_decode($choices, false);
+
+        return $json2[0]->message->content;
     }
 }
