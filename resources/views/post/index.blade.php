@@ -11,8 +11,8 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
 
-                    <h1>Posts</h1>
-                    <a href="/post/create">Create a Post</a>
+                    <h1 class="text-lg">Combine the subject and category to then create a post.</h1><br>
+                    <a href="/post/create" class="bg-blue-300 px-3 py-2 border-2">Create a Post</a>
                     <br><br>
                     <hr>
                     <br>

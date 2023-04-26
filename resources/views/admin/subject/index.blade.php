@@ -12,7 +12,7 @@
 
 
                     <h1 class="text-lg">Subjects are Used to Define Domain-Specific Items</h1><br>
-                    <a href="/subject/create">Add a Subject</a>
+                    <a href="/subject/create" class="bg-blue-300 px-3 py-2 border-2">Add a Subject</a>
 
                     <code-manager></code-manager>
 

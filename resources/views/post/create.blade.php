@@ -15,14 +15,14 @@
                     <form method="post" action="{{ route('post.store') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
-                            <label class="py-4" for="title">Title</label>
+                            <label class="py-4" for="title">Title</label><br>
                             <input class="mt-4" type="text" class="form-control" id="title" name="title"/>
                         </div>
                         <div class="form-group">
-                            <label for="body">Content</label>
-                            <input type="text" class="form-control" id="body" name="body"/>
+                            <label for="body">Content</label><br>
+                            <input style="width:600px;" type="text" class="form-control" id="body" name="body"/>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="bg-blue-300 px-3 py-2 border-2">Submit</button>
                     </form>
 
                    {{-- <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store-form')}}">

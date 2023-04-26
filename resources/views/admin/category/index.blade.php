@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
                     <h1 class="text-lg">Categories are used to Categorize Subjects</h1><br>
-                    <a href="/category/create">Add a Category</a>
+                    <a href="/category/create" class="bg-blue-300 px-3 py-2 border-2">Add a Category</a>
 
                     <code-manager></code-manager>
 

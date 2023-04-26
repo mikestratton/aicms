@@ -19,7 +19,7 @@
                             <input class="mt-4" type="text" class="form-control" id="question" name="question"/>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="bg-blue-300 px-3 py-2 border-2">Submit</button>
                     </form>
 
                    {{-- <form name="add-blog-post-form" id="add-blog-post-form" method="post" action="{{url('store-form')}}">
