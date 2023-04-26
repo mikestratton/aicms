@@ -14,7 +14,12 @@
                     <h1 class="text-lg">OpenAI's API will be used to generate content for posts.
                         A simple form will send a get request to Open AI's ChatGPT, with the results then displayed in the browser.
                     Editing of the results will be optional before saving those results as a post.</h1>
+                    <br><hr>
+                    <br>
 
+                    <h1>We told ChatGPT: You are an assistant for a coding bootcamp website. When answering try to be funny.
+                        <br>
+                        We then asked ChatGPT: "How do I learn the LAMP tech stack?" </h1><br><br>
 
                     <code-manager></code-manager>
                     {{ $result }}
