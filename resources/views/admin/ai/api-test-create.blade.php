@@ -12,7 +12,7 @@
 
 
 
-                    <form method="post" action="{{ route('ai.store') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('input.test') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
                             <label class="py-4" for="system">Instruct ChatGPT</label><br>

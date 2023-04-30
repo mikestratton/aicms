@@ -45,6 +45,9 @@ Route::resource('ai', AIController::class)->middleware('auth');
 Route::get('/test-api', [AIController::class, 'TestAPI']);
 Route::get('/test-api-hard-coded', [AIController::class, 'TestAPIHardCodedResponse']);
 
+Route::get('/api-test-create', [AIController::class, 'ApiTestCreate']);
+Route::post('/api-test-response', [AIController::class, 'TestAPIWithInput'])->name('input.test');
+
 
 
 require __DIR__.'/auth.php';

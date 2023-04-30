@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('a_i_s', function (Blueprint $table) {
             $table->id();
+            $table->text('system')->nullable();
+            $table->text('question')->nullable();
             $table->timestamps();
         });
     }

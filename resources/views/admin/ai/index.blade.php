@@ -13,22 +13,25 @@
 
                     <h1 class="text-lg">OpenAI's API will be used to generate content for posts.
                         A simple form will send a get request to Open AI's ChatGPT, with the results then displayed in the browser.
-                    Editing of the results will be optional before saving those results as a post.</h1>
-
+                    Editing of the results will be optional before saving those results as a post.</h1><br>
+                    <a href="/ai/create" class="bg-blue-300 px-3 py-2 border-2">Generate AI Content</a> <br><br><br>
+                    <p>"System" represents instructions given to ChatGPT for how it will respond. <br>"User" represents the
+                    input given to ChatGPT.</p>
 
                     <code-manager></code-manager>
 
-{{--                    @foreach($categories as $category)
+                    @foreach($ai as $value)
                         <div>
                             <br>
                             <article>
-                                <h1>{{ $category->name }}</h1>
+                                <h1>System: {{ $value->system }}</h1>
+                                <h1>User: {{ $value->question }}</h1>
 
                             </article>
                             <br>
                             <hr>
                         </div>
-                    @endforeach--}}
+                    @endforeach
                 </div>
 </div>
 </div>

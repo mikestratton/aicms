@@ -17,11 +17,12 @@
                     <br><hr>
                     <br>
 
-                    <h1>We told ChatGPT: You are an assistant for a coding bootcamp website. When answering try to be funny.
-                        <br>
-                        We then asked ChatGPT: "How do I learn the LAMP tech stack?" </h1><br><br>
 
                     <code-manager></code-manager>
+                    <h1>INPUT:</h1>
+                    SYSTEM: {{ $system }} <br>
+                    USER: {{ $question }} <br><br>
+                    <h1>RESPONSE:</h1>
                     {{ $result }}
 {{--                    @foreach($response as $value)--}}
 {{--                        <div>--}}

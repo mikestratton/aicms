@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class AI extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+      'system', 'question'
+    ];
 }
