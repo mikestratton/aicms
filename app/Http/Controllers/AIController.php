@@ -83,8 +83,8 @@ class AIController extends Controller
     public function TestAPI()
     {
 //        $question = $request->question;
-        $question = "I need to hire a laravel dev";
-        $system = "Your name is AICMS. You are an assistant for a freelance web developer's website. When answering try to be professional.";
+        $question = "Can you help me build a laravel based web application with API routes?";
+        $system = "Your purpose is to create marketing content for a software company. When answering try to be positive and professional.";
 
         $key = $_ENV['OPENAI_KEY'];
         $curl = curl_init();
