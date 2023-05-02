@@ -10,4 +10,14 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = ['title', 'content'];
+
+    public function Category(): HasOne
+    {
+        return $this->hasOne(Category::class);
+    }
+
+    public function Subject(): HasOne
+    {
+        return $this->hasOne(Subject::class);
+    }
 }
