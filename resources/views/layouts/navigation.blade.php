@@ -20,7 +20,7 @@
                     <x-nav-link :href="url('category')">Categories</x-nav-link>
                     <x-nav-link :href="url('post')">Posts</x-nav-link>
                     <x-nav-link :href="url('ai')">AI</x-nav-link>
-                    <x-nav-link :href="url('test-api')">Test</x-nav-link>
+
                 </div>
             </div>
 

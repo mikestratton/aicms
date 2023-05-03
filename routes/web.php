@@ -42,8 +42,10 @@ Route::resource('ai', AIController::class)->middleware('auth');
 //Route::get('/post/create', [PostController::class, 'create'])->name('post.create');
 //Route::put('/post/create', [PostController::class, 'store'])->name('post.store');
 
-Route::get('/test-api', [AIController::class, 'TestAPI'])->middleware('auth');
-Route::post('/test-api-send', [AIController::class, 'TestAPI'])->middleware('auth')->name('test.api');
+
+Route::post('/ai/response', [AIController::class, 'aiResponse'])->middleware('auth')->name('ai.response');
+
+Route::post('/test-store-post', [AIController::class, 'storePost'])->middleware('auth')->name('test.storepost');
 Route::get('/test-api-hard-coded', [AIController::class, 'TestAPIHardCodedResponse']);
 
 Route::get('/api-test-create', [AIController::class, 'ApiTestCreate']);

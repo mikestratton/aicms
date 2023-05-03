@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\AI;
 use App\Http\Requests\StoreAIRequest;
 use App\Http\Requests\UpdateAIRequest;
+use App\Models\Post;
 
 class AIController extends Controller
 {
@@ -13,7 +14,7 @@ class AIController extends Controller
      */
     public function index()
     {
-        $ai = AI::all();
+        $ai = AI::all()->sortBy('id', false);
         return view('admin.ai.index', [
             'ai' => $ai
         ]);
@@ -40,12 +41,21 @@ class AIController extends Controller
         return redirect('/ai');
 
 
-
-        return view('admin.ai.api-test', [
+        /*return view('admin.ai.api-test', [
             'system' => $system,
             'question' => $question,
             'result' => $result
-        ]);
+        ]);*/
+    }
+
+    public function storePost(StorePostRequest $request)
+    {
+        $post = new Post;
+        $post->title = $request->title;
+        $post->content = $request->body;
+
+        $post->save();
+        return redirect('/post');
     }
 
     /**
@@ -80,12 +90,12 @@ class AIController extends Controller
         //
     }
 
-    public function TestAPI(StoreAIRequest $request)
+    public function aiResponse(StoreAIRequest $request)
     {
         $system = $request->system;
         $question = $request->question;
-/*        $question = "Can you help me build a laravel based web application with API routes?";
-        $system = "Your purpose is to create marketing content for a software company. When answering try to be positive and professional.";*/
+        /*        $question = "Can you help me build a laravel based web application with API routes?";
+                $system = "Your purpose is to create marketing content for a software company. When answering try to be positive and professional.";*/
 
         $key = $_ENV['OPENAI_KEY'];
         $curl = curl_init();
@@ -129,80 +139,10 @@ class AIController extends Controller
 
         $result = $json2[0]->message->content;
 
-        return view('admin.ai.test-api', [
+        return view('admin.ai.response', [
             'system' => $system,
             'question' => $question,
             'result' => $result
         ]);
-    }
-
-    public function ApiTestCreate()
-    {
-        return view('admin.ai.api-test-create');
-    }
-
-    public function TestAPIWithInput(StoreAIRequest $request)
-    {
-        $question = $request->question;
-        $system = $request->system;
-
-        $key = $_ENV['OPENAI_KEY'];
-        $curl = curl_init();
-
-        curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.openai.com/v1/chat/completions',
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_ENCODING => '',
-            CURLOPT_MAXREDIRS => 10,
-            CURLOPT_TIMEOUT => 0,
-            CURLOPT_FOLLOWLOCATION => true,
-            CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
-            CURLOPT_CUSTOMREQUEST => 'POST',
-            CURLOPT_HTTPHEADER => array(
-                "Content-Type: application/json",
-                "Authorization: Bearer $key",
-            ),
-            CURLOPT_POSTFIELDS =>'{
-            "model": "gpt-3.5-turbo",
-            "messages": [
-                    {
-                        "role": "system",
-                        "content": "' . $system . '"
-                    },
-                    {
-                        "role": "user",
-                        "content": "' . $question . '"
-                    }
-                ],
-            "max_tokens": 150
-            }',
-        ));
-
-        $response = curl_exec($curl);
-
-        curl_close($curl);
-
-        $json = json_decode($response, false);
-        $choices = json_encode($json->choices);
-        $json2 = json_decode($choices, false);
-
-        $result = $json2[0]->message->content;
-
-        return view('admin.ai.api-test-response', [
-            'system' => $system,
-            'question' => $question,
-            'result' => $result
-        ]);
-    }
-
-    public function TestAPIHardCodedResponse()
-    {
-        $file = file_get_contents('test/test.json');
-
-        $json = json_decode($file, false);
-        $choices = json_encode($json->choices);
-        $json2 = json_decode($choices, false);
-
-        return $json2[0]->message->content;
     }
 }

@@ -12,7 +12,7 @@
                     <h1>Step One: Send Request to API</h1>
 
 
-                    <form method="post" action="{{ route('test.api') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('ai.response') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
                             <label class="py-4" for="system">Instruct ChatGPT</label><br>
