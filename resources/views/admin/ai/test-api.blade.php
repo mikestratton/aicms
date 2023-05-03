@@ -11,9 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
 
-                    <h1 class="text-lg">OpenAI's API will be used to generate content for posts.
-                        A simple form will send a get request to Open AI's ChatGPT, with the results then displayed in the browser.
-                    Editing of the results will be optional before saving those results as a post.</h1>
+                    <h1 class="text-lg">Step 2 - Review Content, Edit and Save as a New Post</h1>
                     <br><hr>
                     <br>
 
@@ -22,8 +20,23 @@
                     <h1>INPUT:</h1>
                     SYSTEM: {{ $system }} <br>
                     USER: {{ $question }} <br><br>
-                    <h1>RESPONSE:</h1>
-                    {{ $result }}
+
+
+                    <form method="post" action="{{ route('test.api') }}" class="mt-6 space-y-6">
+                        @csrf
+                        <div class="form-group">
+                            <label class="py-4" for="title">Title</label><br>
+                            <textarea class="mt-0" name="title" id="title" cols="50" rows="1"
+                                      placeholder="Enter a Title."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="py-4" for="body">Post</label><br>
+                            <textarea class="mt-0" name="body" id="body" cols="80" rows="8"
+                                      placeholder="Example: I have a dent in my bumper, can you estimate the costs?">{{ $result }}</textarea>
+                        </div>
+
+                        <button type="submit" class="bg-blue-300 px-3 py-2 border-2">Submit</button>
+                    </form>
 {{--                    @foreach($response as $value)--}}
 {{--                        <div>--}}
 {{--                            <br>--}}

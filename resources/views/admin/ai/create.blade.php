@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <h1>Step One: Send Request to API</h1>
 
 
-
-                    <form method="post" action="{{ route('ai.store') }}" class="mt-6 space-y-6">
+                    <form method="post" action="{{ route('test.api') }}" class="mt-6 space-y-6">
                         @csrf
                         <div class="form-group">
                             <label class="py-4" for="system">Instruct ChatGPT</label><br>
