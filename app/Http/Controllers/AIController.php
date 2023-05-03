@@ -14,7 +14,7 @@ class AIController extends Controller
      */
     public function index()
     {
-        $ai = AI::all()->sortBy('id', false);
+        $ai = AI::all()->sortDesc();
         return view('admin.ai.index', [
             'ai' => $ai
         ]);
