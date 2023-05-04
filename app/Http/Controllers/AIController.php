@@ -95,8 +95,8 @@ class AIController extends Controller
     {
         $system = $request->system;
         $question = $request->question;
-        /*        $question = "Can you help me build a laravel based web application with API routes?";
-                $system = "Your purpose is to create marketing content for a software company. When answering try to be positive and professional.";*/
+        $system = $this->removeDoubleQuotes($system);
+        $question = $this->removeDoubleQuotes($question);
 
         $key = $_ENV['OPENAI_KEY'];
         $curl = curl_init();
@@ -145,5 +145,13 @@ class AIController extends Controller
             'question' => $question,
             'result' => $result
         ]);
+    }
+
+    public function removeDoubleQuotes($string){
+        if(str_contains($string, '"')){
+            $string = str_replace('"', ' ', $string);
+            return $string;
+        }
+        return $string;
     }
 }
