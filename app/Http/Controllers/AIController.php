@@ -6,6 +6,7 @@ use App\Models\AI;
 use App\Http\Requests\StoreAIRequest;
 use App\Http\Requests\UpdateAIRequest;
 use App\Models\Post;
+use Illuminate\Support\Facades\DB;
 
 class AIController extends Controller
 {
@@ -14,7 +15,7 @@ class AIController extends Controller
      */
     public function index()
     {
-        $ai = AI::all()->sortDesc();
+        $ai = DB::table('a_i_s')->orderBy('id', 'desc')->paginate(10);
         return view('admin.ai.index', [
             'ai' => $ai
         ]);
