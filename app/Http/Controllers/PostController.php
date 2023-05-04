@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Post;
 use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
@@ -14,7 +15,7 @@ class PostController extends Controller
 
     public function welcome()
     {
-        $posts = Post::all();
+        $posts = $ai = DB::table('a_i_s')->orderBy('id', 'desc')->paginate(10);
 
         return view('post.welcome', [
             'posts' => $posts
@@ -78,8 +79,10 @@ class PostController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy($id)
     {
-        //
+        Post::findOrFail($id)->delete();
+
+        return redirect('/post');
     }
 }

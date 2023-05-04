@@ -20,21 +20,25 @@
                     <hr>
                     <br>
                     <div>
-                        @foreach($ai as $value)
+
                                 <br>
                                 <article>
-
-                                    <h1><strong>Prompt:</strong> {{ $value->system }}</h1>
-                                    <h1><strong>Input:</strong> {{ $value->question }}</h1>
-                                    <h1><strong>AI:</strong> {{ $value->response }}</h1> <br>
-                                    <h1><a href="/ai/{{ $value->id }}" class="bg-amber-300 px-3 py-2 border-2">Edit/Delete</a></h1>
+                                    <h1><strong>Prompt:</strong> {{ $ai->system }}</h1>
+                                    <h1><strong>Input:</strong> {{ $ai->question }}</h1>
+                                    <h1><strong>AI:</strong> {{ $ai->response }}</h1>
 
                                 </article>
                                 <br>
-                                <hr>
-                        @endforeach
+
+
                     </div>
-                    {{ $ai->links() }}
+                    {!! Form::open(['method'=>'DELETE', 'action' => ['AIController@destroy', $ai->id]]) !!}
+
+                    <div class="form-group col-md-3">
+{{--                        {!! Form::submit('Delete AI Content', ['class' => 'btn btn-danger btn-block']) !!}--}}
+                        <button type="submit" class="bg-red-600 px-3 py-2 border-2">Delete</button>
+                    </div>
+                    {!! Form::close() !!}
                 </div>
 </div>
 </div>

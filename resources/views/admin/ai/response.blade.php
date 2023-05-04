@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
 
 
-                    <h1 class="text-lg">Step 2 - Review Content, Edit and Save as a New Post</h1>
+                    <h1 class="text-lg">Step 2 - Review Content, Edit and Save as new AI Generated Content</h1>
                     <br><hr>
                     <br>
 

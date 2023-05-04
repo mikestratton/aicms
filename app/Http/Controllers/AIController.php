@@ -63,9 +63,12 @@ class AIController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(AI $aI)
+    public function show($id)
     {
-        //
+        $ai = AI::findOrFail($id);
+        return view('admin.ai.show', [
+            'ai' => $ai
+        ]);
     }
 
     /**
@@ -73,7 +76,7 @@ class AIController extends Controller
      */
     public function edit(AI $aI)
     {
-        //
+
     }
 
     /**
@@ -87,9 +90,11 @@ class AIController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(AI $aI)
+    public function destroy($id)
     {
-        //
+        AI::findOrFail($id)->delete();
+
+        return redirect('/ai');
     }
 
     public function aiResponse(StoreAIRequest $request)

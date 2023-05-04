@@ -35,15 +35,15 @@
 
 
                 <div class="mt-16">
-                    <h1 style="color:antiquewhite">Posts</h1>
+                    <h1>AI Generated Content</h1>
                     <hr>
                     <br>
                     @foreach($posts as $post)
-                        <p style="color:antiquewhite">{{ $post->title }} <br>{{ $post->content }}</p>
+                        <p>{{ $post->response }} </p>
                         <br>
                     @endforeach
                 </div>
-
+                {{ $posts->links() }}
 
             </div>
         </div>

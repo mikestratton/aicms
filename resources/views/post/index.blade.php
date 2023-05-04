@@ -22,8 +22,15 @@
                             <p>{{ $post->content }}</p>
                         </article>
                         <br>
-                        <hr>
+                        {!! Form::open(['method'=>'DELETE', 'action' => ['PostController@destroy', $post->id]]) !!}
+
+                        <div class="form-group col-md-3">
+                            {{--                        {!! Form::submit('Delete AI Content', ['class' => 'btn btn-danger btn-block']) !!}--}}
+                            <button type="submit" class="bg-red-600 px-3 py-2 border-2">Delete</button>
+                        </div>
+                        {!! Form::close() !!}
                         <br>
+                        <hr>
                     @endforeach
                 </div>
 </div>
