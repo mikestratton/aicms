@@ -27,7 +27,7 @@ return new class extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->dropForeign('subject_id');
-            $table->unsignedBigInteger('subject_id');
+            $table->dropColumn('subject_id');
         });
     }
 };

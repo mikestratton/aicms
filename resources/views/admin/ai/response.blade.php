@@ -27,11 +27,16 @@
                         <div class="form-group">
                             <label class="py-4" for="system">System</label><br>
                             <textarea class="mt-0" name="system" id="system" cols="50" rows="1"
-                                      placeholder="Prompt the system.">{{ $system }}</textarea>
+                                      placeholder="Prompt the system." readonly>{{ $system }}</textarea>
                         </div>
                         <div class="form-group">
                             <label class="py-4" for="question">Question</label><br>
-                            <textarea class="mt-0" name="question" id="question" cols="80" rows="8"
+                            <textarea class="mt-0" name="question" id="question" cols="50" rows="1"
+                                      placeholder="Ask a question." readonly>{{ $question }}</textarea>
+                        </div>
+                        <div class="form-group">
+                            <label class="py-4" for="result">Response</label><br>
+                            <textarea class="mt-0" name="result" id="result" cols="80" rows="8"
                                       placeholder="Example: I have a dent in my bumper, can you estimate the costs?">{{ $result }}</textarea>
                         </div>
 

@@ -36,6 +36,7 @@ class AIController extends Controller
         $ai = new AI;
         $ai->question = $request->question;
         $ai->system = $request->system;
+        $ai->response = $request->result;
 
         $ai->save();
         return redirect('/ai');

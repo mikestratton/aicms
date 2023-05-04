@@ -33,8 +33,8 @@ return new class extends Migration
         Schema::table('posts', function (Blueprint $table) {
             $table->dropForeign('subject_id');
             $table->dropForeign('category_id');
-            $table->unsignedBigInteger('subject_id');
-            $table->unsignedBigInteger('category_id');
+            $table->dropColumn('subject_id');
+            $table->dropColumn('category_id');
         });
     }
 };

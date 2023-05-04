@@ -28,6 +28,7 @@
                             <article>
                                 <h1><strong>System:</strong> {{ $value->system }}</h1>
                                 <h1><strong>User:</strong> {{ $value->question }}</h1>
+                                <h1><strong>Response:</strong> {{ $value->response }}</h1>
 
                             </article>
                             <br>

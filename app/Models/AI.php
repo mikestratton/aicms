@@ -10,6 +10,6 @@ class AI extends Model
     use HasFactory;
 
     protected $fillable = [
-      'system', 'question'
+      'system', 'question', 'response'
     ];
 }
