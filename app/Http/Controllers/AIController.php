@@ -101,8 +101,8 @@ class AIController extends Controller
     {
         $system = $request->system;
         $question = $request->question;
-        $system = $this->removeDoubleQuotes($system);
-        $question = $this->removeDoubleQuotes($question);
+        $system = $this->removeSpecialChars($system);
+        $question = $this->removeSpecialChars($question);
 
         $key = $_ENV['OPENAI_KEY'];
         $curl = curl_init();
@@ -132,7 +132,7 @@ class AIController extends Controller
                         "content": "' . $question . '"
                     }
                 ],
-            "max_tokens": 150
+            "max_tokens": 350
             }',
         ));
 
@@ -153,11 +153,7 @@ class AIController extends Controller
         ]);
     }
 
-    public function removeDoubleQuotes($string){
-        if(str_contains($string, '"')){
-            $string = str_replace('"', ' ', $string);
-            return $string;
-        }
-        return $string;
+    public function removeSpecialChars($string){
+        return preg_replace('/[^A-Za-z0-9\-]/', ' ', $string);
     }
 }
