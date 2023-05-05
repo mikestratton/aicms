@@ -140,13 +140,11 @@ class AIController extends Controller
 
         curl_close($curl);
 
-        $json = json_decode($response, false);
-        $choices = json_encode($json->choices);
-        $json2 = json_decode($choices, false);
-
-        $result = $json2[0]->message->content;
+        $json_object = json_decode($response);
+        $result = $json_object->choices[0]->message->content;
 
         return view('admin.ai.response', [
+            'response' => $response,
             'system' => $system,
             'question' => $question,
             'result' => $result

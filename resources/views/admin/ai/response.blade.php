@@ -18,6 +18,9 @@
 
                     <code-manager></code-manager>
                     <h1>INPUT:</h1>
+                    RESPONSE: <br>
+                    {{ $response }} <br>
+{{--                    CONTENT VALUE: {{ $content_value }} <br>--}}
                     SYSTEM: {!! $system !!} <br>
                     USER: {!! $question !!} <br><br>
 
