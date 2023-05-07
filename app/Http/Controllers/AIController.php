@@ -144,7 +144,7 @@ class AIController extends Controller
         $result = $json_object->choices[0]->message->content;
 
         return view('admin.ai.response', [
-            'response' => $response,
+//            'response' => $response,
             'system' => $system,
             'question' => $question,
             'result' => $result
